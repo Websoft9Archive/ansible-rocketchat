@@ -9,7 +9,10 @@ docker_applications:
 # port_forward
 nginx_reverse_proxy_port: 3000
 
-
+init_db: 
+    mongodb:
+      admin: root
+      password: "123456" 
 
 
       
