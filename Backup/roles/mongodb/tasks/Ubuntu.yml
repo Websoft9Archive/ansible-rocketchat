@@ -1,0 +1,26 @@
+- name: Import the public key used by the package management system
+  apt_key:
+    url: https://www.mongodb.org/static/pgp/server-{{mongodb_ver}}.asc
+    state: present
+
+- name: Import Mongodb Repo
+  apt_repository:
+    repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu {{ansible_distribution_release}}/mongodb-org/{{mongodb_ver}} multiverse
+    filename: mongodb-org-{{mongodb_ver}}
+
+- name: Install Mongodb 
+  apt:
+    name: mongodb-org
+    update_cache: yes
+
+- name: mongodb tmpfiles.d
+  shell: |
+    echo 'd /var/run/mongodb/ 0755 mongodb mongodb' > /etc/tmpfiles.d/mongodb.conf
+    systemd-tmpfiles --create
+
+- name: Create Databases Directory
+  file:
+    path: /data/mongo
+    state: directory
+    owner: mongodb
+    group: mongodb

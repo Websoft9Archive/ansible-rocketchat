@@ -1,0 +1,3 @@
+# prepare installation    
+- name: Install dependency
+  shell: yum install -y gcc-c++ make epel-release GraphicsMagick 

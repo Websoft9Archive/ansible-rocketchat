@@ -1,0 +1,26 @@
+# 服务器前置任务(ubuntu使用)
+- name: rocketchat
+  hosts: all
+  become: yes
+  become_method: sudo
+  gather_facts: False
+  pre_tasks:
+   - name: Install Python
+     raw: sudo apt update && sudo apt install python -y
+
+
+# # 核心任务
+
+- name: rocketchat
+  hosts: all
+  become: yes
+  become_method: sudo
+
+  roles:
+    - { role: common,tags: "common"}  
+    - {role: node.js, tags: "node.js"}
+    - { role: nginx, tags: "nginx"}     
+    - { role: mongodb, tags: "mongodb"}
+    - { role: rocketchat, tags: "rocketchat"}
+    - { role: docker, tags: "docker"}
+    - { role: docker_adminmongo, tags: "docker_adminmongo"}                                        

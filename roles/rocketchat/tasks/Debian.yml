@@ -1,0 +1,12 @@
+# prepare installation
+- name: Install dependency
+  apt:
+    name: graphicsmagick
+    update_cache: yes
+
+
+
+   
+    
+    
+

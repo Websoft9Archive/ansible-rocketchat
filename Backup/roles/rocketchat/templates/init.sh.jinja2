@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# 获取旧密码
+old_password=$(cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}')
+oldapp_password=$(cat /credentials/password.txt | awk 'NR==9' |awk -F ":" '{print $2}')
+
+# 生成新密码
+new_password=$(</dev/urandom tr -dc '12345qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c10)
+app_password=$(</dev/urandom tr -dc '12345qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c10)
+
+/usr/bin/mongod --config /etc/mongod.conf &
+sleep 10
+
+# 修改 mongodb 密码
+echo "
+use rocketchat
+db.changeUserPassword('rocketchat','$app_password')
+use admin
+db.changeUserPassword('root','$new_password')
+" | mongo -u root -p $old_password
+
+
+
+
+# 修改 password.txt root 密码
+sed -i "s/$old_password/$new_password/" /credentials/password.txt
+
+# 修改 password.txt parse 密码
+sed -i "s/$oldapp_password/$app_password/" /credentials/password.txt                                                                               
+
+# 修改 rocketchat 配置文件密码
+sed -i "s/$oldapp_password/$app_password/" /data/wwwroot/Rocket.Chat/rocketchat.conf
+sed -i "s/$old_password/$new_password/" /data/wwwroot/Rocket.Chat/rocketchat.conf
+
+systemctl restart rocketchat
+
+sed -i 's/\/root\/init.sh//g' /etc/rc.local
+rm -rf /root/init.sh

@@ -1,0 +1,16 @@
+- src: http://github.com/websoft9dev/role_common
+  version: master
+
+- src: http://github.com/websoft9dev/role_nodejs
+  version: master
+
+- src: http://github.com/websoft9dev/role_nginx
+  version: master
+
+- src: http://github.com/websoft9dev/role_mongodb
+  version: master
+
+- src: http://github.com/websoft9dev/role_preend
+  version: master
+
+

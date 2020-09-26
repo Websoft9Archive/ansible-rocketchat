@@ -1,0 +1,3 @@
+- name: check_rocketchat_service
+  debug:
+    var: check_rocketchat_service.stdout

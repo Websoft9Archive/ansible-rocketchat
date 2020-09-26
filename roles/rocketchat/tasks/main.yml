@@ -1,0 +1,86 @@
+# install OpenCV by OS_family
+- name: Install this role on {{ansible_os_family}}
+  include: "{{ansible_os_family}}.yml"
+
+# prepare installation
+- name: rm -rf /data/wwwroot/rocketchat for second installation
+  shell: rm -rf /data/wwwroot/rocketchat
+
+- name: Using npm install inherits and node
+  shell: n {{rocketchat_nodejs_version}}
+
+# install rocketchat    
+- name: Download rocketchat
+  unarchive:
+    src: "{{rocketchat_download_url}}"
+    dest: /data/wwwroot
+    remote_src: yes
+
+- name:  Install rocketchat
+  shell: 
+  args:
+    cmd: npm install
+    chdir: /data/wwwroot/bundle/programs/server
+
+- name: Rename dir name
+  shell: cd /data/wwwroot; if [ ! -d "rocketchat" ]; then mv bundle rocketchat; fi
+
+- name: Creat rocketchat_user & set permiss
+  shell: |
+    useradd -M rocketchat && sudo usermod -L rocketchat
+    chown -R rocketchat:rocketchat /data/wwwroot/rocketchat
+
+# Download rocketchatctl
+- name: Download rocketchatctl
+  get_url:
+    url: "{{rocketchatctl_download_url}}"
+    dest: /data/wwwroot/rocketchat
+    mode: '0755'
+
+# configure MongoDB, The data directory needs to be deleted to switch the engine
+- name: Configure MongoDB 
+  shell: | 
+    rm -rf /var/lib/mongo/*  /var/lib/mongodb/*
+    sed -i "s/^#  engine:/  engine: mmapv1/"  /etc/mongod.conf
+    sed -i "s/^#replication:/replication:\n  replSetName: rs01/" /etc/mongod.conf
+
+- name: Start & Enable mongod.service
+  service: 
+    name: mongod 
+    state: restarted
+
+- name: Wait mongodb restart and Use mongo shell initiate 
+  shell: |
+    sleep 3s 
+    mongo --eval "printjson(rs.initiate())"
+        
+# configure the Rocket.Chat service
+- name: Copy rocketchat.service file
+  template:
+    src: rocketchat.service.j2
+    dest: '/lib/systemd/system/rocketchat.service'
+    
+- name: Start & Enable rocketchat.service
+  service: 
+    name: rocketchat 
+    state: started
+    enabled: yes
+
+# set soft link, -b cover the exist links
+- name: set soft link
+  shell: |
+    ln -sf /data/wwwroot/rocketchat/rocketchatctl  /usr/local/bin
+
+ # Check version,
+ # must use sudo sh -c to solve the no-root permission
+- block:
+  - name: Check rocketchat Version
+    shell:  |
+      wget localhost/api/info -O /data/wwwroot/rocketchat/VERSION 
+      sh -c "echo 'rocketchat_version: $(cat /data/wwwroot/rocketchat/VERSION |awk -F\" '{print $4}')' >> /data/logs/install_version.txt"
+
+# check service state
+- name: Check rocketchat Service
+  shell: systemctl status rocketchat | grep Active*
+  register: check_rocketchat_service
+  notify: check_rocketchat_service

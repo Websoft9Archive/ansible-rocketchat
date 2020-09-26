@@ -1,0 +1,15 @@
+[Unit]
+Description=The Rocket.Chat server
+After=network.target remote-fs.target nss-lookup.target nginx.target mongod.target
+[Service]
+ExecStart=/usr/bin/node /data/wwwroot/Rocket.Chat/main.js
+Restart=always
+RestartSec=5
+StartLimitInterval=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=rocketchat
+User=rocketchat
+EnvironmentFile=/data/wwwroot/Rocket.Chat/rocketchat.conf
+[Install]
+WantedBy=multi-user.target

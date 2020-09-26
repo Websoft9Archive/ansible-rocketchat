@@ -1,0 +1,14 @@
+- name: Import Node.js Repo
+  shell: curl -sL https://deb.nodesource.com/setup_{{nodejs_ver}}.x | sudo -E bash -
+
+- name: Install build tools
+  apt:
+    name: build-essential
+    update_cache: yes
+
+
+- name: Install Node.js
+  apt:
+    name: nodejs
+    update_cache: yes
+    

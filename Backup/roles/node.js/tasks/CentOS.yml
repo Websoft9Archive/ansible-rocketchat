@@ -1,0 +1,11 @@
+- name: Import Node.js Repo
+  shell: curl -sL https://rpm.nodesource.com/setup_{{nodejs_ver}}.x | bash -
+
+- name: Install build tools
+  yum:
+    name: [gcc-c++,make]
+
+- name: Install Node.js
+  yum:
+    name: nodejs
+    
