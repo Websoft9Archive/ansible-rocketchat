@@ -1,28 +1,31 @@
 # 账号密码
 
-使用Neo4j，可能会用到的几组账号密码如下：
+通过**SSH**连接云服务器，运行 `cat /credentials/password.txt` 命令，可以查看所有相关账号和密码
 
-## Neo4j
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/catdbpassword-websoft9.png)
 
-默认账户：neo4j
-默认密码：neo4j
+下面列出可能需要用到的几组账号密码：
 
-## MySQL
+## Rocket.Chat
+
+* 管理员账号: `admin`
+* 管理员密码: `admin` 或 存储在您的服务器中的文件中 */credentials/password.txt*  
+
+## MongoDB
 
 * 管理员账号：*`root`*
-* 管理员密码：存储在您的服务器指定文件中：*/credentials/password.txt*。建议通过云控制台直接连接服务器，进入命令终端，运行cat命令获取数据库密码：
+* 管理员密码：存储在您的服务器指定文件中（ */credentials/password.txt* ）
    ![运行cat命令](https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/catdbpassword-websoft9.png)
-* MySQL可视化管理地址： *http://服务器公网 IP:9090*
-   ![phpMyAdmin](https://libs.websoft9.com/Websoft9/DocsPicture/zh/mysql/phpmyadmin-logincn-websoft9.png)
 
 ## Linux
 
 * 主机地址：服务公网IP地址
-* 连接方式：云控制台终端 或 SFTP工具 或 SSH工具
+* 连接方式：云控制台在线SSH 或 SFTP客户端工具 或 SSH客户端工具
 * 管理员密码：创建服务器的时候自行设置，若不记得密码需要通过云控制台重置。
 * 管理员账号：不同的云平台有一定的差异
-   |  云平台   |  管理员账号   |
-   | --- | --- |
-   |  Azure   |  创建服务器的时候自行设置   |
-   |  AWS   |  ubuntu   |
-   |  阿里云，华为云，腾讯云   |  root   |
+   |  云平台   |  管理员账号   | 其他|
+   | --- | --- | --- |
+   |  Azure   |  创建服务器的时候自行设置   | [如何开启root账户？](https://support.websoft9.com/docs/azure/zh/server-login.html#示例2：启用系统root账号) |
+   |  AWS Centos 系统   |  centos   | [如何开启root账户？](https://support.websoft9.com/docs/aws/zh/server-login.html#示例2：启用系统root账号) |
+   |  AWS Ubuntu 系统  |  ubuntu   | [如何开启root账户？](https://support.websoft9.com/docs/aws/zh/server-login.html#示例2：启用系统root账号)  |
+   |  阿里云，华为云，腾讯云   |  root   | |
