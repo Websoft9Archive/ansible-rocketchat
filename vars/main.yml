@@ -3,10 +3,16 @@ nodejs_version: "12"
 mongodb_version: "4.0"       
 mongodb_root_password: "123456"
 
+docker_applications: 
+  - adminmongo
+
 # port_forward
 nginx_reverse_proxy_port: 3000
 
-
+init_db: 
+    mongodb:
+      admin: root
+      password: "123456" 
 
 
       
