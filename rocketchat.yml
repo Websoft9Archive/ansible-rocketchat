@@ -14,4 +14,6 @@
     - { role: role_mongodb, tags: "role_mongodb"}
     - { role: role_docker, tags: "role_docker"}
     - { role: rocketchat, tags: "rocketchat"} 
+    - { role: role_init, tags: "role_init"} 
     - { role: role_preend, tags: "role_preend" } 
+    - { role: role_end, tags: "role_end"} 
