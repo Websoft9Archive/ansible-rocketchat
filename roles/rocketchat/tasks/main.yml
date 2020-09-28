@@ -63,7 +63,7 @@
 - name: Start & Enable rocketchat.service
   service: 
     name: rocketchat 
-    state: started
+    state: restarted
     enabled: yes
 
 # set soft link, -b cover the exist links
