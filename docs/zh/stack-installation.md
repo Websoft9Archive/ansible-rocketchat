@@ -17,14 +17,14 @@
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-set-websoft9.png)
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-setok-websoft9.png)
 
-3. 点击【转到您的工作区】，您就可以使用在线聊天功能了
+3. 点击【转到您的工作区】，您就可以使用在线聊天功能   
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-startchat-websoft9.png)
 
 4. 后台进入管理-添加用户，管理员可以从后台追加用户
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-adduser-websoft9.png) 
 
 5. 其他用户输入*http://域名* 或 *http://Internet IP*, 还可以申请注册
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-register-websoft9.png) 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-register-websoft9.png)   
 
 > 需要了解更多 Rocket.Chat 的使用，请参考官方文档：[Rocket.Chat Documentation](https://docs.rocket.chat/guides/user-guides)
 
