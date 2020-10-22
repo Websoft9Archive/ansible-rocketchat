@@ -13,17 +13,17 @@ rocketchat-server console
 
 #### 如果没有域名是否可以部署 Rocket.Chat？
 
+可以，访问`http://服务器公网IP` 即可
+
 #### 数据库 root 用户对应的密码是多少？
 
 密码存放在服务器相关文件中：`/credentials/password.txt`
-
-可以，访问`http://服务器公网IP` 即可
 
 #### 是否有可视化的数据库管理工具？
 
 有，内置adminMongo，访问地址：*http://服务器公网IP/9091*
 
-#### 如何禁止外界访问phpMyAdmin？
+#### 如何禁止外界访问adminMongo？
 
 连接服务器，编辑 [adminMongo 配置文件](/zh/stack-components.md#adminMongo)，将其中的 `Require all granted` 更改为 `Require ip 192.160.1.0`，然后重启 Apache 服务
 

@@ -10,21 +10,28 @@ If you have completed the Rocket.Chat deployment on Cloud Platform, the followin
 
 ## Rocket.Chat Installation Wizard
 
-1. Using local Chrome or Firefox to visit the URL *http://DNS:15672* or *http://Internet IP:15672*, you will enter installation wizard of Rocket.Chat
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-login-websoft9.png)
+1. Using local Chrome or Firefox to visit the URL *http://DNS* or *http://Internet IP*, you will enter installation wizard of Rocket.Chat
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketchat/rocketchat-login-websoft9.png)
 
-2. Log in to Rocket.Chat web console([Don't have password?](/stack-accounts.md#rocketchat))  
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-bk-websoft9.png)
+2. According to the wizard prompts, enter the organization name, user name, password and other key information to complete the initial configuration  
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketchat/rocketchat-set-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketchat/rocketchat-setok-websoft9.png)
 
-3. Set you new password from: 【Users】>【Admin】>【Permissions】>【Update this user】
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-pw-websoft9.png)
+3. Click [go to your workspace] and you can use the online Rocket.chat
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketchat/rocketchat-startchat-websoft9.png)
 
-> More useful Rocket.Chat guide, please refer to [Rocket.Chat Documentation](https://www.rocketchat.com/documentation.html)
+4. Adminstrator access Rocket.Chat-add users, can add users from the background
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketchat/rocketchat-adduser-websoft9.png) 
+
+5. Visit the URL*http://域名* 或 *http://Internet IP*, you can also apply for registration
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketchat/rocketchat-register-websoft9.png) 
+   
+> More useful Rocket.Chat guide, please refer to [Rocket.Chat Documentation](https://docs.rocket.chat/guides/user-guides)
 
 ## Q&A
 
 #### I can't visit the start page of Rocket.Chat?
 
-Your TCP:15672 of Security Group Rules is not allowed so there no response from Chrome or Firefox
+Your TCP:80 of Security Group Rules is not allowed so there no response from Chrome or Firefox
 
 #### Rocket.Chat service can't start? 

@@ -4,7 +4,7 @@ Each of the following solutions has been proven to be effective and we hope to b
 
 ## Configuration 
 
-Refer to the official docs: https://www.rocketchat.com/configure.html
+Refer to the official docs: https://docs.rocket.chat/installation/manual-installation
 
 ## Domain binding
 

@@ -11,21 +11,28 @@
 ## Rocket.Chat 安装向导
 
 1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://Internet IP*, 进入初始化页面
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-login-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-wizard-websoft9.png)
 
-2. 输入账号密码（[不知道账号密码？](/zh/stack-accounts.md#rocketchat)），成功登录到 Rocket.Chat 后台  
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-bk-websoft9.png)
+2. 根据向导提示，输入组织名称，用户名，密码等关键信息，完成初始配置 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-set-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-setok-websoft9.png)
 
-3. 登录后通过：【Users】>【Admin】>【Permissions】>【Update this user】设置新密码  
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-pw-websoft9.png)
+3. 点击【转到您的工作区】，您就可以使用在线聊天功能了
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-startchat-websoft9.png)
 
-> 需要了解更多 Rocket.Chat 的使用，请参考官方文档：[Rocket.Chat Documentation](https://www.rocketchat.com/documentation.html)
+4. 后台进入管理-添加用户，管理员可以从后台追加用户
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-adduser-websoft9.png) 
+
+5. 其他用户输入*http://域名* 或 *http://Internet IP*, 还可以申请注册
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-register-websoft9.png) 
+
+> 需要了解更多 Rocket.Chat 的使用，请参考官方文档：[Rocket.Chat Documentation](https://docs.rocket.chat/guides/user-guides)
 
 ## 常见问题
 
 #### 浏览器打开IP地址，无法访问 Rocket.Chat（白屏没有结果）？
 
-您的服务器对应的安全组15672端口没有开启（入规则），导致浏览器无法访问到服务器的任何内容
+您的服务器对应的安全组80端口没有开启（入规则），导致浏览器无法访问到服务器的任何内容
 
 #### Rocket.Chat 服务启动失败？
 

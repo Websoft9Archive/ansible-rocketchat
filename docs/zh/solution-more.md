@@ -4,7 +4,7 @@
 
 ## 配置
 
-参考官方方案：https://www.rocketchat.com/configure.html
+参考官方方案：https://docs.rocket.chat/installation/manual-installation
 
 ## 域名绑定
 

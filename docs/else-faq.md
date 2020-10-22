@@ -13,7 +13,7 @@ Yes, e.g `rocketchatctl change_password  admin newpassword`
 
 #### If there is no domain name, can I deploy Rocket.Chat?
 
-Yes, visit Rocket.Chat by *http://Internet IP:8161*
+Yes, visit Rocket.Chat by *http://Internet IP*
 
 #### What is the password for the database root user?
 
@@ -21,7 +21,7 @@ The password is stored in the server related file: `/credentials/password.txt`
 
 #### Is there a web-base GUI database management tools?
 
-Yes, phpMyAdmin is on it, visit by *http://Internet IP/phpmyadmin*
+Yes, adminMongo is on it, visit by *http://Internet IP/9091*
 
 #### Is it possible to modify the source path of Rocket.Chat?
 
