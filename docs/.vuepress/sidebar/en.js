@@ -29,7 +29,7 @@ module.exports = [
         collapsable: false,
         children: [
           '/admin-services',
-          '/admin-mangodb',
+          '/admin-mongodb',
           ['https://support.websoft9.com/docs/linux/lang-erlang.html','Erlang'],
           ['https://support.websoft9.com/docs/linux/admin-practices.html','Linux'],
         ]
