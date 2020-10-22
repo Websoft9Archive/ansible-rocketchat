@@ -8,7 +8,7 @@ If you have completed the Rocket.Chat deployment on Cloud Platform, the followin
 2. Check you **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)** of Cloud Console to ensure the TCP:8161 is allowed
 3. Make a domain resolution on your DNS Console if you want to use domain for Rocket.Chat
 
-## Rocket.Chat Installation Wizard
+## Rocket.Chat Installation Wizard  
 
 1. Using local Chrome or Firefox to visit the URL *http://DNS* or *http://Internet IP*, you will enter installation wizard of Rocket.Chat
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketchat/rocketchat-login-websoft9.png)
