@@ -51,7 +51,7 @@
 
 - name: Wait mongodb restart and Use mongo shell initiate 
   shell: |
-    sleep 3s 
+    sleep 15s 
     mongo --eval "printjson(rs.initiate())"
         
 # configure the Rocket.Chat service
