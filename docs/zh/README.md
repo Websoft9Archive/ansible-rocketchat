@@ -8,7 +8,7 @@ home: false
 
 Rocket.Chat 是全球知名的即时通讯平台之一。采用NodeJS+MongoDB开发，虽然成立时间较晚，自2015年面世以来，迅速成长为最大的开源项目之一。目前，Rocket.Chat广泛应用在银行，非政府组织，初创企业和政府组织，通过自定义其外观和风格，用户可以在云上或通过在本地托管自己的服务器来设置Rocket.Chat，用户可以安全地管理数据。
 
-![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/discuz/discuz-gui-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-startchat-websoft9.png)
 
 ---
 
