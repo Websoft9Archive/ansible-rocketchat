@@ -21,13 +21,6 @@ df -lh
 free -lh
 
 # 查看服务状态和日志
-systemctl status rocketchat
-journalctl -u rocketchat
+sudo systemctl status rocketchat
+sudo journalctl -u rocketchat
 ```
-
-#### 在Chrome下修改密码后报错？
-
-这个并不是服务器端的问题，只要更新浏览器即可。
-
-![chrome error of Rocket.Chat](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketchat/rocketchat-chromeerror-websoft9.png)
-
