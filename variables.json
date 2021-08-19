@@ -8,10 +8,11 @@
   "requirements_Bandwidth": "100",
   "requirements_disk": "20",
   "requirements_swap": "2",
+  "requirements_configure_url": "https://docs.rocket.chat/installing-and-updating/manual-installation",
   "components": "Rocket.Chat, Nginx, MongDB, adminMongo on Docker, Node.JS, Docker",
   "install_way": {
-    "en": "Package isntallation",
-    "zh": "包安装"
+    "en": "Isntallation for download binaries files ",
+    "zh": "下载可执行二进制包解压安装"
   },
   "install_url": "https://github.com/RocketChat/Rocket.Chat/releases"
 }
