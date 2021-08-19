@@ -49,10 +49,13 @@
     name: mongod 
     state: restarted
 
+- name: Copy mongo initiate script 
+  copy:
+    src: mongo_initiate.sh
+    dest: /tmp/mongo_initiate.sh
+
 - name: Wait mongodb restart and Use mongo shell initiate 
-  shell: |
-    sleep 60s 
-    mongo --eval "printjson(rs.initiate())"
+  shell: bash /tmp/mongo_initiate.sh
         
 # configure the Rocket.Chat service
 - name: Copy rocketchat.service file
