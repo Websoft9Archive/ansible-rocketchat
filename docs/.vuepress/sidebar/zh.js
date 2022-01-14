@@ -18,7 +18,7 @@ module.exports = [
     children: [
       '/zh/solution-smtp',
       '/zh/solution-https',
-      '/zh/solution-cli',
+      '/zh/solution-api',
       '/zh/solution-backup',
       '/zh/solution-upgrade',
       '/zh/solution-more',
